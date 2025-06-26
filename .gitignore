@@ -1,0 +1,13 @@
+.DS_Store
+demos/api.p8
+demos/automata.p8
+demos/bounce.p8
+demos/cast.p8
+demos/collide.p8
+demos/dots3d.p8
+demos/drippy.p8
+demos/hello.p8
+demos/jelpi.p8
+demos/sort.p8
+demos/wander.p8
+demos/waves.p8
