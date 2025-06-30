@@ -11,15 +11,25 @@ function _init()
 	px=63
 	py=63
 
+	flap = 0
+	flap_amt=8
+	gravity =2
+
 end
 
 function _update()
 --called 30x a sec
 
-	py=py+1 --gravity
-	if btn(❎) then
-	py=py-2 
+	py=py+gravity --gravity
+	if btnp(❎) then 
+		flap = 20 
 		end
+		
+	if flap>0 then
+		flap=flap-5
+	end
+
+	py=py-flap
 
 end
 
