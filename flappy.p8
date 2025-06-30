@@ -72,6 +72,11 @@ end
 function u_pipes()
 --update pipes
 	p1x-=1
+
+	--loop pipe
+	if p1x <-16 then 
+		p1x=128
+		end
 end
 	
 function d_pipes()
