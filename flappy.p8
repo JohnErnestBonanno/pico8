@@ -30,6 +30,13 @@ function _update()
 	end
 
 	py=py-flap
+	
+	if py>=120 then 
+		py=120
+	elseif py<=0 then
+		py=0
+	end
+	
 
 end
 
