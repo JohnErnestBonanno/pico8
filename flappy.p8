@@ -1,21 +1,35 @@
 pico-8 cartridge // http://www.pico-8.com
 version 42
 __lua__
+-- top right is 0,0
+-- x gets bigger to right
+-- y gets bigger to bottom 
+
 function _init()
 -- called when prog runs
+
+	px=63
+	py=63
+
 end
 
 function _update()
 --called 30x a sec
+
+	py=py+1 --gravity
+	if btn(❎) then
+	py=py-2 
+		end
+
 end
 
 function _draw()
---called 30x a sec after update
-cls()--clear screen
-map()--draw map
-
-spr(1,63,63)
---sprite num, x, y 
+	--called 30x a sec after update
+	cls()--clear screen
+	map()--draw map
+	
+	spr(1,px,py)
+	--sprite num, x, y 
 
 end
 __gfx__
