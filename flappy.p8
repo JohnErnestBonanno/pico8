@@ -65,8 +65,11 @@ end
 
 function i_pipes()
 --set up pipes
+	
+	gap=20
+	
 	p1bx=120--pipe1-x
-	p1by=63--pipe1-y
+	p1by=rnd(128)--pipe1-y
 end
 
 function u_pipes()
@@ -74,12 +77,16 @@ function u_pipes()
 	p1bx-=1
 
 	--loop pipe
-	if p1bx <-16 then 
-		p1bx=128
+	if p1bx <-16 then
+		p1by=rnd(128) -- random height 
+		p1bx=128 -- reset x
 		end
 end
 	
 function d_pipes()
+--draw top pipe
+	spr(7,p1bx,p1by-128-gap,2,16)
+
 --draw bottom pipes
 	spr(7,p1bx,p1by,2,16)
 end
