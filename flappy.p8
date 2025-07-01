@@ -12,6 +12,7 @@ function _init()
 	py=63
 	
 	score = 0
+	col=false
 
 	flap = 0
 	flap_amt=8
@@ -46,6 +47,7 @@ function _update()
 	
 	u_pipes()
 	u_score()
+	collide()
 	
 
 end
@@ -61,6 +63,7 @@ function _draw()
 	--sprite num, x, y 
 	
 	print("score:"..score)
+	print(col)
 
 end
 
@@ -97,11 +100,23 @@ function d_pipes()
 	spr(7,p1bx,p1by,2,16)
 end
 -->8
---score--
+--score/collision--
 
 function u_score()
 	if p1bx==px then 
 		score+=1
+	end
+end
+
+function collide()
+	if abs(px-p1bx)<4 then
+		if py>p1by then
+			col=true
+		elseif py<p1by-gap then
+			col=true
+		else
+			col=false
+		end
 	end
 end
 __gfx__
