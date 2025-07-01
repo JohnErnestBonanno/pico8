@@ -10,6 +10,8 @@ function _init()
 
 	px=63
 	py=63
+	
+	score = 0
 
 	flap = 0
 	flap_amt=8
@@ -18,6 +20,7 @@ function _init()
 	--sub function
 	i_pipes()
 	--set up pipes
+	
 
 end
 
@@ -42,6 +45,7 @@ function _update()
 	end
 	
 	u_pipes()
+	u_score()
 	
 
 end
@@ -55,6 +59,8 @@ function _draw()
 	
 	spr(1,px,py)
 	--sprite num, x, y 
+	
+	print("score:"..score)
 
 end
 
@@ -89,6 +95,14 @@ function d_pipes()
 
 --draw bottom pipes
 	spr(7,p1bx,p1by,2,16)
+end
+-->8
+--score--
+
+function u_score()
+	if p1bx==px then 
+		score+=1
+	end
 end
 __gfx__
 00000000cccccccc0000000000000000000000000000000000000000c11111111111111c00000000000000000000000000000000000000000000000000000000
