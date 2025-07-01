@@ -66,7 +66,7 @@ end
 function i_pipes()
 --set up pipes
 	
-	gap=20
+	gap=24
 	
 	p1bx=120--pipe1-x
 	p1by=rnd(128)--pipe1-y
@@ -78,7 +78,7 @@ function u_pipes()
 
 	--loop pipe
 	if p1bx <-16 then
-		p1by=rnd(128) -- random height 
+		p1by=16+gap+rnd(128-32-gap) -- random height 
 		p1bx=128 -- reset x
 		end
 end
