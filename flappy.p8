@@ -53,11 +53,11 @@ function update_game()
 
 py=py+gravity --gravity
 	if btnp(❎) then 
-		flap = 15 
+		flap = 20 
 		end
 		
 	if flap>0 then
-		flap=flap-5
+		flap=flap-4
 		pspr=1
 	else
 			pspr=2
