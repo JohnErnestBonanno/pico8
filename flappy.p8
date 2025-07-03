@@ -99,9 +99,9 @@ end
 function i_pipes()
 --set up pipes
 	
-	gap=24
+	gap=32
 	
-	p1bx=120--pipe1-x
+	p1bx=128
 	p1by=rnd(128)--pipe1-y
 end
 
