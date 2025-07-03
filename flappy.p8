@@ -100,7 +100,8 @@ end
 function	draw_game_over()
 	cls()
 	print("game over!",40,60)
-	print("z to restart!",34,68)
+	print("score:"..score)
+	print("z to restart!")
 end
 
 function update_start()
