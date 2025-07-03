@@ -14,7 +14,7 @@ function _init()
 	score = 0
 	col=false
 	
-	state="game"
+	state="start"
 
 	flap = 0
 	flap_amt=8
@@ -32,6 +32,8 @@ function _update()
 		update_game()
 	elseif state=="game over" then 
 		update_game_over()
+	elseif state=="start" then
+		update_start()
 	end
 end
 
@@ -40,6 +42,8 @@ function _draw()
 		draw_game()
 	elseif state=="game over" then
 		draw_game_over()
+	elseif state=="start" then
+		draw_start()
 	end
 end
 
@@ -91,9 +95,23 @@ end
 function	draw_game_over()
 	cls()
 	print("game over!",40,60)
-	print("z to restart!",28,60)
+	print("z to restart!",34,68)
 end
 
+function update_start()
+	if btnp(🅾️) then
+		state="game"
+	end
+end
+
+function draw_start()
+	cls()
+	map()
+	print("my flap!",40,60)
+	print("z to start!",34,68)
+	print("press x to flap!")
+
+end
 -->8
 --pipes--
 
