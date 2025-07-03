@@ -27,8 +27,20 @@ end
 
 function _update()
 --called 30x a sec
+	update_game()
+	
+	
 
-	py=py+gravity --gravity
+end
+
+function _draw()
+	update_draw()
+
+end
+
+function update_game()
+
+py=py+gravity --gravity
 	if btnp(❎) then 
 		flap = 20 
 		end
@@ -48,11 +60,10 @@ function _update()
 	u_pipes()
 	u_score()
 	collide()
-	
 
 end
 
-function _draw()
+function update_draw()
 	--called 30x a sec after update
 	cls()--clear screen
 	map()--draw map
@@ -64,11 +75,7 @@ function _draw()
 	
 	print("score:"..score)
 	print(col)
-
 end
-
-
-
 -->8
 --pipes--
 
