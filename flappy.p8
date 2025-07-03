@@ -30,6 +30,8 @@ end
 function _update()
 	if state=="game" then 
 		update_game()
+	elseif state=="game over" then 
+		update_game_over()
 	end
 end
 
@@ -80,7 +82,14 @@ function draw_game()
 	print(col)
 end
 
+function update_game_over()
+	if btnp(🅾️) then
+	_init()
+	end
+end
+
 function	draw_game_over()
+	cls()
 	print("game over!")
 end
 
@@ -127,8 +136,10 @@ function collide()
 	if abs(px-p1bx)<4 then
 		if py>p1by then
 			col=true
+			state="game over"
 		elseif py<p1by-gap then
 			col=true
+			state="game over"
 		else
 			col=false
 		end
