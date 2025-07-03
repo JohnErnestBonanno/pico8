@@ -36,6 +36,8 @@ end
 function _draw()
 	if state=="game" then
 		draw_game()
+	elseif state=="game over" then
+		draw_game_over()
 	end
 end
 
@@ -77,6 +79,11 @@ function draw_game()
 	print("score:"..score)
 	print(col)
 end
+
+function	draw_game_over()
+	print("game over!")
+end
+
 -->8
 --pipes--
 
