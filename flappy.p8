@@ -90,7 +90,8 @@ end
 
 function	draw_game_over()
 	cls()
-	print("game over!")
+	print("game over!",40,60)
+	print("z to restart!",28,60)
 end
 
 -->8
