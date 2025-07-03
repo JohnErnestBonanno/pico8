@@ -13,6 +13,8 @@ function _init()
 	
 	score = 0
 	col=false
+	
+	state="game"
 
 	flap = 0
 	flap_amt=8
@@ -26,16 +28,15 @@ function _init()
 end
 
 function _update()
---called 30x a sec
-	update_game()
-	
-	
-
+	if state=="game" then 
+		update_game()
+	end
 end
 
 function _draw()
-	update_draw()
-
+	if state=="game" then
+		draw_game()
+	end
 end
 
 function update_game()
@@ -63,7 +64,7 @@ py=py+gravity --gravity
 
 end
 
-function update_draw()
+function draw_game()
 	--called 30x a sec after update
 	cls()--clear screen
 	map()--draw map
