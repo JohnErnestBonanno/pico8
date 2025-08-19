@@ -13,7 +13,17 @@ function _init()
 end
 
 function _update()
+
+-- x movement --
+	if btn(➡️) then
+		player.x+=1
+	end
 	
+	if btn(⬅️) then 
+		player.x-=1
+	end
+
+-- y movement -- 
 	if btn(⬆️) then
 		player.y-=1
 	end
