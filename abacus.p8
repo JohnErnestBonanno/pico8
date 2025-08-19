@@ -24,22 +24,14 @@ function _draw()
 	print(button)
 
 end
-
-
---function draw_start()
--- cls()
--- print("abacus madness")
--- print("press z to start")
-
---end
 -->8
 
 -->8
 --[[ notes
 3 main functions
-	init
-	update
-	draw
+	init - sets things up
+	update - changes every frame
+	draw - draws things you've changed
 
 screen is 128 x 128
 	top left is 0,0
