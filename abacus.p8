@@ -2,16 +2,20 @@ pico-8 cartridge // http://www.pico-8.com
 version 42
 __lua__
 function _init()
-	print("abacus madness") 
+	print("abacus madness")
+	button = "" 
 end
 
 function _update()
-
+	if btn(⬆️) then
+		button = "up"
+	end
 end
 
 function _draw()
 	cls() -- clear screen
 	spr(1,63,63)
+	print(button)
 
 end
 
