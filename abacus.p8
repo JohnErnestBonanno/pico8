@@ -2,12 +2,16 @@ pico-8 cartridge // http://www.pico-8.com
 version 42
 __lua__
 function _init()
+	print("abacus madness") 
+end
+
+function _update()
 
 end
 
-function draw_game()
- cls()
- map()
+function _draw()
+	cls() -- clear screen
+	spr(1,63,63)
 
 end
 
@@ -18,6 +22,20 @@ end
 -- print("press z to start")
 
 --end
+-->8
+
+-->8
+-- notes
+
+-- 3 main functions
+
+--init
+
+--update
+
+--draw
+
+--screen is 128 x 128
 __gfx__
 00000000000770001111111100077000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 00000000000770001111111100077000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
