@@ -4,24 +4,28 @@ __lua__
 function _init()
 	x_position = 63
 	y_position = 63
-	button = "" 
+	
+-- player class -- 
+	player={
+		x=63,
+		y=63
+	} 
 end
 
 function _update()
 	
 	if btn(⬆️) then
-		y_position-=1
+		player.y-=1
 	end
 	
 	if btn(⬇️) then 
-		y_position+=1
+		player.y+=1
 	end
 end
 
 function _draw()
 	cls() -- clear screen
-	spr(1,x_position,y_position)
-	print(button)
+	spr(1,player.x,player.y)
 
 end
 
