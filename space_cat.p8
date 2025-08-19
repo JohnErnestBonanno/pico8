@@ -56,7 +56,9 @@ function _draw()
 		player.flip_x
 		)
 		
-	print(mget(flr(player.x/8),flr(player.y/8)))
+	print(mget(flr((player.x+4)/8),flr((player.y+4)/8)))
+	-- /8 because each sprite is 8x8 pixels
+	-- takes top left by default
 
 end
 -->8
