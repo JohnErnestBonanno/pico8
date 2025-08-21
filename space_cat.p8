@@ -8,7 +8,8 @@ function _init()
 		x=63,
 		y=63,
 		flip_y = false,
-		sp=1
+		sp=1,
+		speed = 1
 	} 
 end
 
@@ -16,14 +17,14 @@ function _update()
 
 -- x movement --
 	if btn(➡️) then
-		player.x+=1
+		player.x+=player.speed
 		player.flip_y=false
 		player.flip_x=false
 		player.sp=1
 	end
 	
 	if btn(⬅️) then 
-		player.x-=1
+		player.x-=player.speed
 		player.flip_y=true
 		player.flip_x=false
 		player.sp=1
@@ -31,16 +32,27 @@ function _update()
 
 -- y movement -- 
 	if btn(⬆️) then
-		player.y-=1
+		player.y-=player.speed
 		player.sp=2
 		player.flip_x=false
 	end
 	
 	if btn(⬇️) then 
-		player.y+=1
+		player.y+=player.speed
 		player.sp=2
 		player.flip_x=true
 	end
+	
+			if
+			((mget(flr((player.x+4)/8),flr((player.y+4)/8)))==40
+			or
+			((mget(flr((player.x+4)/8),flr((player.y+4)/8)))==25))
+			 then
+				player.speed = 2
+			else player.speed =1
+			end
+
+	
 end
 
 function _draw()
@@ -56,7 +68,6 @@ function _draw()
 		player.flip_x
 		)
 		
-	print(mget(flr((player.x+4)/8),flr((player.y+4)/8)))
 	-- /8 because each sprite is 8x8 pixels
 	-- takes top left by default
 
