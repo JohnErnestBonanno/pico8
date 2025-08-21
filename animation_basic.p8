@@ -3,15 +3,36 @@ version 42
 __lua__
 function _init()
 	sprite=1
+	sprite_timer = 0
 end
 
 function _update()
 
+	if sprite_timer <10 then 
+		sprite_timer+=1
+		else
+			if sprite <4 then
+				sprite+=1
+			else
+				sprite=1
+			end	
+			sprite_timer = 0
+		end
+
 end
 
 function _draw()
+	cls()
+	spr(sprite,63,63)
 
 end 
+-->8
+--[[
+without a timer
+animation updates 30x a sec
+ 
+]]
+
 __gfx__
 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 00000000000440000004400000044000000440000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
