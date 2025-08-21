@@ -4,17 +4,20 @@ __lua__
 function _init()
 	sprite=1
 	sprite_timer = 0
+	animation_speed = 10
+	first_frame = 1
+	last_frame = 4
 end
 
 function _update()
 
-	if sprite_timer <10 then 
+	if sprite_timer <animation_speed then 
 		sprite_timer+=1
 		else
-			if sprite <4 then
+			if sprite <last_frame then
 				sprite+=1
 			else
-				sprite=1
+				sprite=first_frame
 			end	
 			sprite_timer = 0
 		end
