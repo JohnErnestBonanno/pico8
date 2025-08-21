@@ -11,16 +11,18 @@ end
 
 function _update()
 
-	if sprite_timer <animation_speed then 
-		sprite_timer+=1
-		else
-			if sprite <last_frame then
-				sprite+=1
+	if btn(➡️) then -- animation triggers on button press
+		if sprite_timer <animation_speed then 
+			sprite_timer+=1
 			else
-				sprite=first_frame
+				if sprite <last_frame then
+					sprite+=1
+				else
+					sprite=first_frame
+				end	
+				sprite_timer = 0
 			end	
-			sprite_timer = 0
-		end
+	end 
 
 end
 
