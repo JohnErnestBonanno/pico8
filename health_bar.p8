@@ -15,9 +15,12 @@ function _draw()
 end
 -->8
 function init_health()
+	health=100
 end
 
 function	update_health()
+	health-=.1
+	bar_width=36*health/100-- 82-46
 end
 
 function	draw_health()
@@ -25,7 +28,8 @@ function	draw_health()
 		44,60,--top left coor
 		84,68,--bottom right coor
 		6)--color
-		rectfill(46,62,82,66,10)
+		rectfill(46,62,46+bar_width,66,10)
+		print(health)
 end
 __gfx__
 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
