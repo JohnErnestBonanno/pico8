@@ -18,8 +18,11 @@ function init_health()
 	health=100
 end
 
+
 function	update_health()
-	health-=.1
+	if health > 0 then
+		health-=1
+	end
 	bar_width=36*health/100-- 82-46
 end
 
