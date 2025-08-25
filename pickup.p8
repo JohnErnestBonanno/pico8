@@ -26,7 +26,7 @@ function _draw()
 	cls()
 	map()
 	spr(plr.sp,plr.x,plr.y,2,2)
---	dpickups()
+	dpickups()
 end
 
 -->8
@@ -42,14 +42,14 @@ end
 function upickups()
 	if pu.act then
 		if abs(plr.x-pu.x)<=4 and abs(plr.y-pu.y)<=4 then
-			pv.act=false
+			pu.act=false
 			tomato+=1
 		end
 	end	
 end
 
 function dpickups()
-	if pv.act then
+	if pu.act then
 		spr(4,pu.x,pu.y,2,2)
 	end
 print("tomato: "..tomato,10,10,7)
