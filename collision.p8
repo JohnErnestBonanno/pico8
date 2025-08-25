@@ -19,14 +19,23 @@ end
 
 function iplr()
 	plr={
-		x=63,
-		y=63,
-		plr.sp=1
-		}
+	x=63,
+	y=63,
+	sp=1
+	}
 end
+
+function move()
+	if btn(⬇️) then	plr.y+=1 end
+	if btn(⬆️) then plr.y-=1	end
+	if btn(➡️) then plr.x+=1 end
+	if btn(⬅️) then plr.x-=1 end
+end
+	
 
 function uplr()
 	move(plr)
+	
 end
 
 function dplr()
