@@ -31,27 +31,32 @@ end
 
 -->8
 function ipickups()
-	pu={
-	x=63,
-	y=50,
-	act=true
-	}
+  pus = {
+        {x=63, y=50, act=true},
+        {x=80, y=70, act=true},
+        {x=40, y=40, act=true}
+    }
 	tomato=0
 end
 
 function upickups()
-	if pu.act then
-		if abs(plr.x-pu.x)<=4 and abs(plr.y-pu.y)<=4 then
-			pu.act=false
-			tomato+=1
-		end
-	end	
+	for pu in all(pus) do
+		if pu.act then
+			if abs(plr.x-pu.x)<=4 and abs(plr.y-pu.y)<=4 then
+				pu.act=false
+				tomato+=1
+			end
+		end	
+	end
 end
 
 function dpickups()
-	if pu.act then
-		spr(4,pu.x,pu.y,2,2)
+	for pu in all(pus) do
+		if pu.act then
+			spr(4,pu.x,pu.y,2,2)
 	end
+end
+
 print("tomato: "..tomato,10,10,7)
 end
 __gfx__
