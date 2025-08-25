@@ -25,13 +25,14 @@ function iplr()
 	}
 end
 
+--[[
 function move()
 	if btn(⬇️) then	plr.y+=1 end
 	if btn(⬆️) then plr.y-=1	end
 	if btn(➡️) then plr.x+=1 end
 	if btn(⬅️) then plr.x-=1 end
 end
-	
+]]	
 
 function uplr()
 	move(plr)
@@ -40,6 +41,19 @@ end
 
 function dplr()
 	spr(plr.sp,plr.x,plr.y)
+end
+-->8
+--collision--
+
+function move(o)--move an object
+	local lx=o.x --last x pos
+	local ly=o.y --last x pos
+	
+	--shorter if then statement
+	if (btn(⬆️)) o.y-=1
+	if (btn(⬇️)) o.y+=1	
+	if (btn(➡️)) o.x+=1
+	if (btn(⬅️)) o.x-=1
 end
 __gfx__
 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
