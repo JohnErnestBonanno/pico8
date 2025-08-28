@@ -27,6 +27,7 @@ function _draw()
 	map()
 	spr(plr.sp,plr.x,plr.y,2,2)
 	dpickups()
+dcam()
 end
 
 -->8
@@ -58,6 +59,12 @@ function dpickups()
 end
 
 print("tomato: "..tomato,10,10,7)
+end
+-->8
+--dynamic camera--
+
+function dcam()
+	camera(plr.x+8-63,plr.y+8-63)
 end
 __gfx__
 00000000000000000000000000000000000003000000000033333333000000000000000000000000000000000000000000000000000000000000000000000000
