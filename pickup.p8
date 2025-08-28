@@ -4,13 +4,17 @@ __lua__
 function _init()
 	plr={
 	x=63,
-	y=0,
+	y=30,
 	f=false,
 	sp=1
 	}
 
 	anitimer=0
 	ipickups()
+
+cx=0
+cy=0
+
 end
 
 function _update()
@@ -58,7 +62,7 @@ function dpickups()
 	end
 end
 
-print("tomato: "..tomato,10,10,7)
+print("tomato: "..tomato,cx,cy,7)
 end
 -->8
 --dynamic camera--
