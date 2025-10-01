@@ -3,17 +3,13 @@ version 42
 __lua__
 -- runs at game start
 function _init() 
-	text="this is var text"
+	my_text="original text"
 
 end
 
 -- called at 30x a sec
 function _update()
-
-	if btnp(❎) then 
-		text = "btn pressed"
-	end
-
+	changetext("button press text")
 end
 
 -- 30x a sec, but after update
@@ -22,6 +18,16 @@ function _draw()
 	map()
 	print(text,16,16)
 
+end
+
+function changetext(txt)
+
+		if btn(❎) then 
+			text = txt
+		else 
+			text=my_text	
+		end
+	
 end
 __gfx__
 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
