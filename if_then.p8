@@ -12,8 +12,12 @@ function _init()
 end
 
 function _update()
-	if 10>7 then
-		plr.x=70
+	if btn(➡️) then
+		plr.x=plr.x+1
+	end 
+	
+	if btn(⬅️) then
+		plr.x=plr.x-1
 	end
 
 end
