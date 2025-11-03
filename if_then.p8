@@ -14,6 +14,9 @@ end
 function _update()
 	if btn(➡️) then
 		plr.x=plr.x+1
+-- moonwalk code -- 
+--	else 
+	--	plr.x=plr.x-1		
 	end 
 	
 	if btn(⬅️) then
