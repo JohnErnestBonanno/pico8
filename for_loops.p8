@@ -14,7 +14,7 @@ end
 function _draw()
 	cls()
 	for i=1,5 do
-		print("hello cat")
+		print("hello cat "..i,8,8*i,i)
 	end
 
 end
