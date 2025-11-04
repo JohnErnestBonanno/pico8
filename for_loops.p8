@@ -14,8 +14,10 @@ end
 function _draw()
 	cls()
 	map()
-	for i=0,15 do
-		mset(i,0,2)
+	for x=0,15 do
+		for y=0,15 do
+			mset(x,y,2)
+		end
 	--	print("hello cat "..i,8,8*i,i)
 	end
 
