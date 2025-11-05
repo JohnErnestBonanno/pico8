@@ -4,6 +4,8 @@ __lua__
 --particles
 --no built in particle systems
 
+-- add random color
+
 function _init()
 	parts={}	
 end
@@ -22,7 +24,7 @@ end
 function _draw()
 	cls()
 	for p in all(parts) do
-		circfill(p.x,p.y,3,10) 
+		circfill(p.x,p.y,3,rnd(16)) 
 	end
 end
 
