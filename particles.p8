@@ -12,7 +12,10 @@ end
 
 function _update()
 	if btnp(❎) then
-		add(parts,{x=63,y=63})
+		add(parts,{
+				x=63,
+				y=63,
+				col=flr(rnd(16))})
 	end
 	
 	for p in all(parts) do 
@@ -24,7 +27,7 @@ end
 function _draw()
 	cls()
 	for p in all(parts) do
-		circfill(p.x,p.y,3,rnd(16)) 
+		circfill(p.x,p.y,3,p.col) 
 	end
 end
 
