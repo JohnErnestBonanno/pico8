@@ -4,7 +4,13 @@ __lua__
 --for loops--
 
 function _init()
-
+	for x=0,15 do
+		for y=0,15 do
+			if rnd(1)<.5 then
+				mset(x,y,2)
+				end
+		end
+	end
 end
 
 function _update()
@@ -14,13 +20,8 @@ end
 function _draw()
 	cls()
 	map()
-	for x=0,15 do
-		for y=0,15 do
-			mset(x,y,2)
-		end
-	--	print("hello cat "..i,8,8*i,i)
-	end
 
+	--	print("hello cat "..i,8,8*i,i)
 end
 
 
