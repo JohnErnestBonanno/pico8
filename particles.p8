@@ -17,7 +17,7 @@ end
 function _draw()
 	cls()
 	for p in all(parts) do
-		print(p.x)
+		circfill(p.x,p.y,3,10)
 	end
 end
 
