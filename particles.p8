@@ -18,14 +18,20 @@ function _update()
 					y=63,
 					sx=rnd(2)-1,
 					sy=rnd(2)-1,
-					col=flr(rnd(16))})
+					col=flr(rnd(16))
+					})
 			end
 	end
 	
 	for p in all(parts) do 
 		p.x+=p.sx
 		p.y+=p.sy
+		
+		--delete particles
+		if p.x>128 or p.x<0 or p.y>128 or p.y<0 then
+			del(parts,p)
 	end
+end
 end
 
 function _draw()
