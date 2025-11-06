@@ -17,7 +17,17 @@ function _init()
 		--end gravity--
 end
 
+--horizontal movement--
 function _update()
+	plr.dx=0
+	if btn(⬅️) then
+		plr.dx=-1
+		plr.f=true
+	elseif btn(➡️) then
+		plr.dx=1
+		plr.f=false
+	end
+	plr.x+=plr.dx
 
 end
 
