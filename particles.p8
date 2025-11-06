@@ -12,12 +12,14 @@ end
 
 function _update()
 	if btnp(❎) then
-		add(parts,{
-				x=63,
-				y=63,
-				sx=rnd(2)-1,
-				sy=rnd(2)-1,
-				col=flr(rnd(16))})
+		for i=1,10 do
+			add(parts,{
+					x=63,
+					y=63,
+					sx=rnd(2)-1,
+					sy=rnd(2)-1,
+					col=flr(rnd(16))})
+			end
 	end
 	
 	for p in all(parts) do 
