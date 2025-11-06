@@ -29,6 +29,9 @@ function _update()
 		plr.f=false
 	end
 	plr.x+=plr.dx
+	
+	--apply gravity--
+	plr.y+=gravity
 
 end
 
