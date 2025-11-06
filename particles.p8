@@ -10,6 +10,7 @@ function _init()
 	parts={}	
 end
 
+--could nest in a function
 function _update()
 	if btnp(❎) then
 		for i=1,10 do
@@ -18,7 +19,8 @@ function _update()
 					y=63,
 					sx=rnd(2)-1,
 					sy=rnd(2)-1,
-					col=flr(rnd(16))
+					col=flr(rnd(16)),
+					r=rnd(4)
 					})
 			end
 	end
@@ -37,7 +39,7 @@ end
 function _draw()
 	cls()
 	for p in all(parts) do
-		circfill(p.x,p.y,3,p.col) 
+		circfill(p.x,p.y,p.r,p.col) 
 	end
 end
 
