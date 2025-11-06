@@ -15,12 +15,14 @@ function _update()
 		add(parts,{
 				x=63,
 				y=63,
+				sx=rnd(2)-1,
+				sy=rnd(2)-1,
 				col=flr(rnd(16))})
 	end
 	
 	for p in all(parts) do 
-		p.x+=rnd(1)
-		p.y+=rnd(1)
+		p.x+=p.sx
+		p.y+=p.sy
 	end
 end
 
