@@ -43,7 +43,7 @@ function move(o)
 	local ly=o.y
 	
 	o.dx=0
-	o.xy=0
+	o.dy=0
 	
 	if btn(➡️) then
 		o.dx=1
@@ -65,11 +65,25 @@ end
 	end
 	
 	if iforce>0 then
-		iforce=iforce*.6
+		iforce=jforce*.6
 	end
 	
-	o.y-=iforce
-	
+	o.y-=jforce
+
+--●ravity--
+if not onground(o) then
+	o.y+=gravity
+end
+
+function onground(o)
+	local a = fget(mget((o.x+4)/8,(0.y+9)/8),0)
+
+	if a then 
+		return true
+	else 
+		return false
+	end
+end	
 __gfx__
 00000000080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 00000000088800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
