@@ -18,48 +18,9 @@ function _init()
 end
 
 function _update()
-	-- horizontal movement
-	plr.dx=0
-	if btn(⬅️) then
-		plr.dx=-1
-		plr.f=true
-	elseif btn(➡️) then
-		plr.dx=1
-		plr.f=false
-	end
-	plr.x+=plr.dx
-
-	-- jumping
-	if btnp(❎) and onground(plr) then
-		plr.dy=-jump_force
-		sfx(0)
-	end
-
-	-- apply gravity
-	plr.dy+=gravity
-
-	-- remember last y
-	local ly=plr.y
-
-	-- apply vertical movement
-	plr.y+=plr.dy
-
-	-- check ground collision
-	c1x=plr.x+plr.g1x
-	c2x=plr.x+plr.g2x
-	cy=plr.y+plr.gy
-
-	if mget(c1x/8,cy/8)==4 or mget(c2x/8,cy/8)==4 then
-		col=true
-	else
-		col=false
-	end
-
-	-- stop falling through floor
-	if col then
-		plr.y=ly
-		plr.dy=0
-	end
+	move_player(plr)
+	jump(plr)
+	handle_gravity(plr)
 end
 
 function _draw()
@@ -70,10 +31,50 @@ function _draw()
 	pset(c2x,cy,8)
 end
 
+-->8
+function move_player(p)
+	p.dx=0
+	if btn(⬅️) then
+		p.dx=-1
+		p.f=true
+	elseif btn(➡️) then
+		p.dx=1
+		p.f=false
+	end
+	p.x+=p.dx
+end
+
+function jump(p)
+	if btnp(❎) and onground(p) then
+		p.dy=-jump_force
+		sfx(0)
+	end
+end
+
+function handle_gravity(p)
+	p.dy+=gravity
+
+	local ly=p.y
+	p.y+=p.dy
+
+	c1x=p.x+p.g1x
+	c2x=p.x+p.g2x
+	cy=p.y+p.gy
+
+	if mget(c1x/8,cy/8)==4 or mget(c2x/8,cy/8)==4 then
+		col=true
+	else
+		col=false
+	end
+
+	if col then
+		p.y=ly
+		p.dy=0
+	end
+end
+
 function onground(p)
-	-- checks the tile below the player's feet
-	local a = fget(mget((p.x+4)/8,(p.y+9)/8),0)
-	return a
+	return fget(mget((p.x+4)/8,(p.y+9)/8),0)
 end
 
 __gfx__
