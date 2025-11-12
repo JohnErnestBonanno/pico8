@@ -3,8 +3,9 @@ version 42
 __lua__
 function _init()
 	col=false
-	gravity=.5
-	jump_force=3.5
+	gravity=.2
+	jump_force=5
+	hold_gravity=.2
 	plr={
 		x=30,
 		y=30,
@@ -13,7 +14,8 @@ function _init()
 		f=false,
 		g1x=2,
 		g2x=6,
-		gy=7
+		gy=7,
+		jumping=false
 	}
 end
 
@@ -47,8 +49,16 @@ end
 function jump(p)
 	if btnp(❎) and onground(p) then
 		p.dy=-jump_force
+		p.jumping=true
 		sfx(0)
 	end
+	
+	if p.jumping and btn(❎) and p.dy<0 then
+		p.dy+= hold_gravity
+	else
+		p.jumping=false
+	end
+	
 end
 
 function handle_gravity(p)
