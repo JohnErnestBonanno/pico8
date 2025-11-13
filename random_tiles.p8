@@ -12,15 +12,7 @@ function _draw()
 	cls()
 	map()
 	
-	for x=0,15 do
-		for y=0,15 do
-			local t = mget(x,y)
-			if t > 0 then
-				-- draw the tile number (white, centered-ish)
-				print(t, x*8+2, y*8+2, 7)
-			end
-		end
-	end
+	--debug_r_tile()
 	
 end
 -->8
@@ -35,6 +27,19 @@ function place_tiles()
 			end
 		end
 	end
+end
+
+function debug_r_tile()
+		for x=0,15 do
+		for y=0,15 do
+			local t = mget(x,y)
+			if t > 0 then
+				-- draw the tile number (white, centered-ish)
+				print(t, x*8+2, y*8+2, 7)
+			end
+		end
+	end
+
 end
 __gfx__
 00000000bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb00000000000000000000000000000000000000000000000000000000000000000000000000000000
