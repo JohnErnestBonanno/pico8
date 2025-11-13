@@ -3,6 +3,9 @@ version 42
 __lua__
 function _init()
 
+	place_tiles()
+
+
 end
 
 function _update()
@@ -11,6 +14,15 @@ end
 function _draw()
 	cls()
 	map()
+end
+-->8
+function place_tiles()
+	for x=0,15 do
+		for y=0,15 do
+			local sp = rnd(5)+1
+			mset(x,y,sp)
+		end
+	end --xaxis
 end
 __gfx__
 00000000bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb00000000000000000000000000000000000000000000000000000000000000000000000000000000
