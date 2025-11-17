@@ -13,13 +13,13 @@ function _update()
 	gposy=stat(33)
 	
 	if btnp(❎) then 
-		--shoot(gposy)
+		shoot(gposy)
 	end
 	
 	ubullets()
 end
 
-function draw()
+function _draw()
 	cls()
 	if btnp(❎) then
 		spr(2,8,gposy)
@@ -47,7 +47,7 @@ end
 function dbullets()
 	--draw bullets
 	for b in all(buls) do
-	
+		spr(4,b.x,b.y)
 	end 
 
 end
@@ -55,8 +55,8 @@ end
 function shoot()
 	
 	add(buls,{
-	x=0,
-	y=0,
+	x=40,
+	y=40,
 	spd=1
 	})
 	
