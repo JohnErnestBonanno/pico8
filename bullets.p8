@@ -39,6 +39,7 @@ end
 function ubullets()
 	--update bullets
 	for b in all(buls) do
+		b.x+=1
 	
 	end 
 
@@ -52,11 +53,11 @@ function dbullets()
 
 end
 
-function shoot()
+function shoot(gy)
 	
 	add(buls,{
-	x=40,
-	y=40,
+	x=8,
+	y=gy,
 	spd=1
 	})
 	
