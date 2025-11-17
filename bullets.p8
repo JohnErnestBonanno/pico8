@@ -39,8 +39,12 @@ end
 function ubullets()
 	--update bullets
 	for b in all(buls) do
-		b.x+=1
-	
+		b.x+=b.spd
+		
+		
+		if b.x > 130 then
+			del(buls,b)
+		end
 	end 
 
 end
@@ -58,7 +62,7 @@ function shoot(gy)
 	add(buls,{
 	x=8,
 	y=gy,
-	spd=1
+	spd=2
 	})
 	
 
