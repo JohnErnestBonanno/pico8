@@ -6,8 +6,8 @@ function _init()
 end
 
 function _update()
-	if sp<13 then 
-		sp+=1
+	if sp<12.9 then 
+		sp+=.1
 	else
 		sp=9
 	end
