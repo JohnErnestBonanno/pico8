@@ -2,16 +2,20 @@ pico-8 cartridge // http://www.pico-8.com
 version 42
 __lua__
 function _init()
-
+	sp=9
 end
 
 function _update()
-
+	if sp<13 then 
+		sp+=1
+	else
+		sp=9
+	end
 end
 
 function _draw()
 	cls(3)
-	spr(1,56,56,2,2)
+	spr(sp,56,56)
 
 end
 __gfx__
