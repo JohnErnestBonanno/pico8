@@ -2,20 +2,21 @@ pico-8 cartridge // http://www.pico-8.com
 version 42
 __lua__
 function _init()
-	sp=9
+	sp=1
+	frames={1,3,5,7}
 end
 
 function _update()
-	if sp<12.9 then 
+	if sp<4.9 then 
 		sp+=.1
 	else
-		sp=9
+		sp=1
 	end
 end
 
 function _draw()
 	cls(3)
-	spr(sp,56,56)
+	spr(frames[flr(sp)],56,56,2,2)
 
 end
 __gfx__
