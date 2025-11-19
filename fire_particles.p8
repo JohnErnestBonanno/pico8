@@ -2,12 +2,29 @@ pico-8 cartridge // http://www.pico-8.com
 version 42
 __lua__
 function _init()
+	
+	parts={}
+	add(parts,{
+	x=63,
+	y=63,
+	r=3,
+	c=11,
+	speed=1
+	})
+	
 end
 
 function _update()
 end
 
 function _draw()
+	cls()
+	
+	for p in all(parts) do 
+		circfill(p.x, p.y, p.r, p.c)
+	end
+	
+	
 end
 __gfx__
 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
