@@ -5,22 +5,28 @@ function _init()
 	
 	parts={}
 	
-	for i=1,10 do
-	
-		add(parts,{
-		x=40+rnd(20),
-		y=40+rnd(20),
-		r=1,
-		c=11,
-		speed=rnd(2)
-		})
-	end
-	
 end
 
 function _update()
+	
+	for i=1,20 do
+	
+		add(parts,{
+		x=40+rnd(20),
+		y=80+rnd(20),
+		r=rnd(3),
+		c=11,
+		life=20,
+		speed=1+rnd(2)
+		})
+	end
+	
 	for p in all(parts) do
-		p.x+=p.speed
+		p.y-=p.speed
+		p.life -=1
+		if p.life<0 then
+			del(parts,p)
+		end
 	end
 end
 
