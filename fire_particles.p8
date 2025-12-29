@@ -5,9 +5,18 @@ function _init()
 	
 	parts={}
 	
+	force=-3
+	force_d=1
+	
 end
 
 function _update()
+
+	force+= .1 * force_d
+	
+	if force>3 or force<-3 then
+		force_d=force_d*-1
+	end
 	
 	for i=1,20 do
 	
@@ -24,6 +33,9 @@ function _update()
 	for p in all(parts) do
 		p.y-=p.speed
 		p.life -=1
+		p.r-=.1
+	-- add wind
+		p.x+=force
 		
 		if p.life<5 then
 			p.c=9
