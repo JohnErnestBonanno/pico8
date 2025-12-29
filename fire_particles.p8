@@ -4,13 +4,17 @@ __lua__
 function _init()
 	
 	parts={}
-	add(parts,{
-	x=63,
-	y=63,
-	r=3,
-	c=11,
-	speed=1
-	})
+	
+	for i=1,10 do
+	
+		add(parts,{
+		x=40+rnd(20),
+		y=40+rnd(20),
+		r=1,
+		c=11,
+		speed=1
+		})
+	end
 	
 end
 
