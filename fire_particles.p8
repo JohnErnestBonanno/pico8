@@ -1,31 +1,34 @@
 pico-8 cartridge // http://www.pico-8.com
 version 42
 __lua__
+--more randomness 
+--particles feel more organic
+
 function _init()
 	
 	parts={}
 	
-	force=-3
+	force=-1
 	force_d=1
 	
 end
 
 function _update()
 
-	force+= .1 * force_d
+	force+= .1 * force_d*rnd(1)
 	
-	if force>3 or force<-3 then
+	if force>1 or force<-1 then
 		force_d=force_d*-1
-	end
+	end 
 	
 	for i=1,20 do
 	
 		add(parts,{
-		x=40+rnd(20),
-		y=80+rnd(20),
+		x=57+rnd(10),
+		y=90+rnd(10),
 		r=rnd(3),
-		c=10,
-		life=10,
+		c=7,
+		life=13,
 		speed=1+rnd(2)
 		})
 	end
@@ -37,7 +40,11 @@ function _update()
 	-- add wind
 		p.x+=force
 		
-		if p.life<5 then
+		if p.life<11 then
+			p.c=10
+		end
+		
+		if p.life<8 then
 			p.c=9
 		end
 		
