@@ -12,13 +12,16 @@ function _init()
 		y=40+rnd(20),
 		r=1,
 		c=11,
-		speed=1
+		speed=rnd(2)
 		})
 	end
 	
 end
 
 function _update()
+	for p in all(parts) do
+		p.x+=p.speed
+	end
 end
 
 function _draw()
