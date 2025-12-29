@@ -15,8 +15,8 @@ function _update()
 		x=40+rnd(20),
 		y=80+rnd(20),
 		r=rnd(3),
-		c=11,
-		life=20,
+		c=10,
+		life=10,
 		speed=1+rnd(2)
 		})
 	end
@@ -24,6 +24,11 @@ function _update()
 	for p in all(parts) do
 		p.y-=p.speed
 		p.life -=1
+		
+		if p.life<5 then
+			p.c=9
+		end
+		
 		if p.life<0 then
 			del(parts,p)
 		end
